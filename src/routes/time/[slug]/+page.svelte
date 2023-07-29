@@ -32,13 +32,14 @@
 	<Spinner class="m-auto" />
 {:else}
 	<button
-		class="p-1 pl-0 rounded-r-lg h-12 w-4 fixed top-1/3 text-white bg-slate-950 opacity-60 shadow hover:bg-slate-800"
+		class="p-1 pl-0 rounded-r-lg h-12 w-4 fixed top-1/3 text-white bg-slate-950 opacity-60 hover:bg-slate-800"
 		on:click={() => (hidden1 = false)}><MdSettings /></button
 	>
 	<div class="flex flex-col justify-center items-center px-7 py-6 min-h-[95vh]">
 		<Drawer
-			class="h-fit top-1/3 bg-myBackground text-myText rounded-r-lg shadow"
+			class="h-fit top-1/3 bg-myBackground text-myText rounded-r-lg border-2 border-myText"
 			transitionType="fly"
+			backdrop={false}
 			{transitionParams}
 			bind:hidden={hidden1}
 			id="sidebar1"
