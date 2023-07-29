@@ -23,7 +23,10 @@ const config = {
 					700: '#EB4F27',
 					800: '#CC4522',
 					900: '#A5371B'
-				}
+				},
+				//Personal
+				myBackground: '#102542',
+				myText: '#CDD7D6'
 			}
 		}
 	}
