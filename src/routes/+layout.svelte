@@ -1,7 +1,20 @@
 <script>
+	import { bgColor, textColor } from '$lib/stores';
 	import '../app.css';
+
+	let customBgColor = '';
+	bgColor.subscribe((value) => {
+		customBgColor = value;
+	});
+	let customTextColor = '';
+	textColor.subscribe((value) => {
+		customTextColor = value;
+	});
 </script>
 
-<div class="min-h-screen w-screen bg-[#102542] text-[#CDD7D6] px-2 py-4">
+<div
+	style="background-color: {customBgColor}; color: {customTextColor}"
+	class={`min-h-screen w-screen flex`}
+>
 	<slot />
 </div>
