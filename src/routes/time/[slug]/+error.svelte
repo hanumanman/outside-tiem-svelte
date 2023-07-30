@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Button from '$lib/components/Button.svelte';
+	import { Button } from 'flowbite-svelte';
 </script>
 
 <div class="flex w-screen h-screen flex-col space-y-5 items-center justify-center p-5">
