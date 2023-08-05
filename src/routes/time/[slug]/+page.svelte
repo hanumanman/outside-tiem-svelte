@@ -114,10 +114,7 @@
 		</div>
 		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
 
-		<p
-			style="font-size: {customFontSize + 'px'}"
-			class="whitespace-pre-wrap !text-[{customFontSize + 'px'}]"
-		>
+		<p style="font-size: {customFontSize + 'px'}" class="whitespace-pre-wrap">
 			{data.content}
 		</p>
 
