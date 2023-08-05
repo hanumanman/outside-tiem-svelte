@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import { goto, preloadData } from '$app/navigation';
 	import { cn } from '$lib/utils';
 	import { Button, Input } from 'flowbite-svelte';
+	import { onMount } from 'svelte';
 
 	export let className = '';
 	export let chapter: number = 14;
@@ -18,6 +19,9 @@
 	const handleJump = () => {
 		goto(`/time/${input}`);
 	};
+	onMount(async () => {
+		await preloadData(`/time/${chapter + 1}`);
+	});
 </script>
 
 <div class={cn('flex space-x-2 items-center', className)}>
@@ -48,7 +52,7 @@
 			<Button class="ml-1 rounded-r rounded-l-none" type="submit">Go</Button>
 		</div>
 	</form>
-	<a href="/time/{chapter + 1}" data-sveltekit-preload-data>
+	<a href="/time/{chapter + 1}">
 		<Button class="h-12" aria-label="handleNextPage">
 			<div class="w-3">
 				<svg
