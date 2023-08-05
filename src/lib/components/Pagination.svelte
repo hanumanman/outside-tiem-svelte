@@ -22,7 +22,7 @@
 
 <div class={cn('flex space-x-2 items-center', className)}>
 	<a href={`/time/${chapter - 1}`} data-sveltekit-preload-data>
-		<Button class="flex justify-center items-center h-12 aspect-square" aria-label="handlePrevPage">
+		<Button class="h-12" aria-label="handlePrevPage">
 			<div class="w-3">
 				<svg
 					aria-hidden="true"
@@ -49,7 +49,7 @@
 		</div>
 	</form>
 	<a href="/time/{chapter + 1}" data-sveltekit-preload-data>
-		<Button class="flex justify-center items-center h-12 aspect-square" aria-label="handleNextPage">
+		<Button class="h-12" aria-label="handleNextPage">
 			<div class="w-3">
 				<svg
 					aria-hidden="true"
