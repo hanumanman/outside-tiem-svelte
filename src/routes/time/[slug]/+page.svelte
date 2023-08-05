@@ -92,7 +92,7 @@
 
 		<!-- Page content -->
 		<div class="flex">
-			<Pagination chapter={data.chapter} className="mb-2" />
+			<Pagination chapter={data.chapter} className="mb-3" />
 			<Button
 				on:click={() => (hidden1 = false)}
 				arial-label="settings"
@@ -122,6 +122,6 @@
 		</p>
 
 		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
-		<Pagination chapter={data.chapter} className="mt-2" />
+		<Pagination chapter={data.chapter} className="mt-3" />
 	</div>
 {/if}
