@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Wang wang - Chapter {data.chapter}</title>
+	<title>Vozer khua - Chapter {data.chapter}</title>
 </svelte:head>
 
 {#if $navigating}
@@ -92,7 +92,7 @@
 
 		<!-- Page content -->
 		<div class="flex">
-			<Pagination story="time" chapter={data.chapter} className="mb-3" />
+			<Pagination story="vozer" chapter={data.chapter} className="mb-3" />
 			<Button
 				on:click={() => (hidden1 = false)}
 				arial-label="settings"
