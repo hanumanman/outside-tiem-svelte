@@ -7,6 +7,7 @@
 	export let className = '';
 	export let chapter: number = 14;
 	let input = '';
+	export let story = 'vozer';
 
 	// const handleNextPage = () => {
 	// 	chapter += 1;
@@ -17,15 +18,15 @@
 	// 	goto(`/time/${chapter}`);
 	// };
 	const handleJump = () => {
-		goto(`/time/${input}`);
+		goto(`/${story}/${input}`);
 	};
 	onMount(async () => {
-		await preloadData(`/time/${chapter + 1}`);
+		await preloadData(`/${story}/${chapter + 1}`);
 	});
 </script>
 
 <div class={cn('flex space-x-2 items-center', className)}>
-	<a href={`/time/${chapter - 1}`} data-sveltekit-preload-data>
+	<a href={`/${story}/${chapter - 1}`} data-sveltekit-preload-data>
 		<Button class="h-12" aria-label="handlePrevPage">
 			<div class="w-3">
 				<svg
@@ -52,7 +53,7 @@
 			<Button class="ml-1 rounded-r rounded-l-none" type="submit">Go</Button>
 		</div>
 	</form>
-	<a href="/time/{chapter + 1}">
+	<a href={`/${story}/${chapter + 1}`}>
 		<Button class="h-12" aria-label="handleNextPage">
 			<div class="w-3">
 				<svg
