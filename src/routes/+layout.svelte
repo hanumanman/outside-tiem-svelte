@@ -1,19 +1,10 @@
 <script>
-	import { bgColor, textColor } from '$lib/stores';
+	import { currentTheme } from '$lib/stores';
 	import '../app.css';
-
-	let customBgColor = '';
-	bgColor.subscribe((value) => {
-		customBgColor = value;
-	});
-	let customTextColor = '';
-	textColor.subscribe((value) => {
-		customTextColor = value;
-	});
 </script>
 
 <div
-	style="background-color: {customBgColor}; color: {customTextColor}"
+	style="background-color: {$currentTheme.bg}; color: {$currentTheme.text}"
 	class={`min-h-screen w-screen flex`}
 >
 	<slot />

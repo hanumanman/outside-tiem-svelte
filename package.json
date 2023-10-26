@@ -36,7 +36,7 @@
 		"clsx": "^2.0.0",
 		"flowbite": "^1.7.0",
 		"flowbite-svelte": "^0.40.2",
-
+		"svelte-language-server": "^0.15.20",
 		"tailwind-merge": "^1.14.0"
 	}
 }
