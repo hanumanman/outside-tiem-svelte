@@ -17,13 +17,14 @@
 	const handleJump = () => {
 		goto(`/${storyId}/${input}`);
 	};
+
 	onMount(async () => {
 		await preloadData(`/${storyId}/${chapter + 1}`);
 	});
 </script>
 
 <div class={cn('flex space-x-2 items-center', className)}>
-	<a href={`/${storyId}/${chapter - 1}`} data-sveltekit-preload-data class="h-full">
+	<a href={`/${storyId}/${chapter - 1}`}>
 		<Button class="h-12">
 			<PrevPageIcon class="w-3" />
 		</Button>
