@@ -11,8 +11,6 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	const { chapter, storyId: id, content } = data;
-	const storyId = parseInt(id);
 
 	const getHeader = (storyId: number) => {
 		let storyName: string = '';
@@ -25,12 +23,12 @@
 		if (storyId === Story.TIME) {
 			storyName = 'Wang wang';
 		}
-		return `${storyName} - Chapter ${chapter}`;
+		return `${storyName} - Chapter ${data.chapter}`;
 	};
 </script>
 
 <svelte:head>
-	<title>{getHeader(storyId)}</title>
+	<title>{getHeader(data.storyId)}</title>
 </svelte:head>
 
 {#if $navigating}
@@ -42,18 +40,18 @@
 			<Button class="h-full " on:click={() => goto('/')}>
 				<HomeIcon class="w-4" />
 			</Button>
-			<Pagination {storyId} {chapter} />
+			<Pagination storyId={data.storyId} chapter={data.chapter} />
 			<UserSettings />
 		</div>
-		<h1 class="text-xl font-bold mb-1">Chương {chapter}</h1>
+		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
 
 		<!-- Page content -->
 		<p style="font-size: {$fontSize + 'px'}" class="whitespace-pre-wrap">
-			{content}
+			{data.content}
 		</p>
 
 		<!-- Controls -->
-		<h1 class="text-xl font-bold mb-1">Chương {chapter}</h1>
-		<Pagination {chapter} {storyId} class="mt-3" />
+		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
+		<Pagination chapter={data.chapter} storyId={data.storyId} class="mt-3" />
 	</div>
 {/if}
