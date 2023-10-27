@@ -11,6 +11,7 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+	$: ({ chapter, content, storyId } = data);
 
 	const getHeader = (storyId: number) => {
 		let storyName: string = '';
@@ -23,7 +24,7 @@
 		if (storyId === Story.TIME) {
 			storyName = 'Wang wang';
 		}
-		return `${storyName} - Chapter ${data.chapter}`;
+		return `${storyName} - Chapter ${chapter}`;
 	};
 </script>
 
@@ -40,18 +41,18 @@
 			<Button class="h-full " on:click={() => goto('/')}>
 				<HomeIcon class="w-4" />
 			</Button>
-			<Pagination storyId={data.storyId} chapter={data.chapter} />
+			<Pagination {storyId} {chapter} />
 			<UserSettings />
 		</div>
 		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
 
 		<!-- Page content -->
 		<p style="font-size: {$fontSize + 'px'}" class="whitespace-pre-wrap">
-			{data.content}
+			{content}
 		</p>
 
 		<!-- Controls -->
 		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
-		<Pagination chapter={data.chapter} storyId={data.storyId} class="mt-3" />
+		<Pagination {chapter} {storyId} class="mt-3" />
 	</div>
 {/if}
