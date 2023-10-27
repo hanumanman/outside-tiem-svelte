@@ -25,7 +25,7 @@
 	<div class="flex flex-col justify-center items-center px-7 py-6 min-h-[95vh]">
 		<!-- Controls -->
 		<div class="flex items-center mb-3 gap-2">
-			<Button class="h-full border-2" on:click={() => goto('/')}>
+			<Button class="h-full " on:click={() => goto('/')}>
 				<HomeIcon class="w-4" />
 			</Button>
 			<Pagination storyId={parseInt(data.storyId)} chapter={data.chapter} />
