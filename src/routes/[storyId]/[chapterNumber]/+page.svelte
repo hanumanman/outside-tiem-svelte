@@ -53,6 +53,6 @@
 
 		<!-- Controls -->
 		<h1 class="text-xl font-bold mb-1">Chương {data.chapter}</h1>
-		<Pagination {chapter} {storyId} class="mt-3" />
+		<Pagination {storyId} {chapter} class="mt-3" />
 	</div>
 {/if}
